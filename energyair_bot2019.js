@@ -26,7 +26,6 @@ const questions = {
 	"ENERGY AIR IST DER EINZIGE ENERGY EVENT, …":"...für den man Tickets nur gewinnen kann.",
 	"WO ERFÄHRST DU IMMER DIE NEUSTEN INFOS RUND UM DAS ENERGY AIR?":"im Radio, auf der Website und über Social Media",
 	"WER ERÖFFNETE DAS ERSTE ENERGY AIR?":"Bastian Baker",
-	"WER ERÖFFNETE DAS ERSTE ENERGY AIR?":"Bastian Baker",
 	"MIT WELCHEM DIESER TICKETS GENIESST DU DIE BESTE SICHT ZUR ENERGY AIR BÜHNE?":"XTRA-Circle",
 	"WER WAR DER LETZTE ACT AM ENERGY AIR 2018?":'Lo &amp; Leduc',
 	"WIE VIELE ENERGY AIR TICKETS WERDEN VERLOST?":"40’000",
@@ -40,7 +39,7 @@ const questions = {
 	"WANN FAND DAS ENERGY AIR ZUM ERSTEN MAL STATT?":"2014",
 	"WEN NAHM KNACKEBOUL AM ENERGY AIR 2014 MIT BACKSTAGE?":"Sein Mami",
 	"WIE BREIT IST DIE ENERGY AIR BÜHNE?":"70 Meter",
-	"WIE SCHWER IST DIE ENERGY AIR BÜHNE?":"450 Tonnen",
+	"WIE SCHWER IST DIE ENERGY AIR BÜHNE?":"60 Tonnen",
 	"WIE VIELE MITARBEITER SIND AM ENERGY AIR IM EINSATZ?":"1000",
 	"WELCHE AMERIKANISCHE BAND TRAT AM ENERGY AIR 2016 AUF?":"Maroon 5"
 }
@@ -68,15 +67,15 @@ function answerQuestion () {
             $(el).children('input').trigger('click')
         }
     })
-    setTimeout(nextQuestion, 200) //speed
+    setTimeout(nextQuestion, 1200) //speed
 }
 
 function makeAction () {
 	if (document.getElementsByTagName('h1')[1] != null){
 		if (titleIs('Hinter welchem Logo verstecken sich die Tickets?')) {
 			console.log('STEP: Memory')
-			var star = Math.floor(Math.random() * 12) + 2;
-			document.getElementsByTagName('img') [star].click();
+			console.log('STEP: Memory')
+			$('.circle').first().children('img').trigger('click')
 			setTimeout(makeAction, 1000)
 		} else if (titleIs('Leider verloren')) {
 			$('.lose button.game-button').trigger('click')
