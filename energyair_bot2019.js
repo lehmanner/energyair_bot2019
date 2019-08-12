@@ -34,14 +34,14 @@ const questions = {
 	"WIE VIELE KONFETTI-KANONEN GIBT ES AM ENERGY AIR?":"40",
 	"WIE REISTE KYGO IM JAHR 2015 ANS ENERGY AIR?":"Im Privatjet",
 	"WANN FINDET DAS ENERGY AIR 2019 STATT?":"7. September 2019",
-	"WIE VIELE ACTS WAREN BEIM LETZTEN ENERGY AIR DABEI?":"15",
+	"WIE VIELE ACTS WAREN BEIM LETZTEN ENERGY AIR DABEI?":"14",
 	"WIE VIELE SPOTLIGHTS GIBT ES AM ENERGY AIR?":"250",
 	"WANN FAND DAS ENERGY AIR ZUM ERSTEN MAL STATT?":"2014",
 	"WEN NAHM KNACKEBOUL AM ENERGY AIR 2014 MIT BACKSTAGE?":"Sein Mami",
 	"WIE BREIT IST DIE ENERGY AIR BÜHNE?":"70 Meter",
 	"WIE SCHWER IST DIE ENERGY AIR BÜHNE?":"60 Tonnen",
 	"WIE VIELE MITARBEITER SIND AM ENERGY AIR IM EINSATZ?":"1000",
-	"WELCHE AMERIKANISCHE BAND TRAT AM ENERGY AIR 2016 AUF?":"Maroon 5"
+	"WELCHE AMERIKANISCHE BAND TRAT AM ENERGY AIR 2016 AUF?":"One Republic"
 }
 
 function titleIs (title, selector = 'h1') {
@@ -74,8 +74,8 @@ function makeAction () {
 	if (document.getElementsByTagName('h1')[1] != null){
 		if (titleIs('Hinter welchem Logo verstecken sich die Tickets?')) {
 			console.log('STEP: Memory')
-			console.log('STEP: Memory')
-			$('.circle').first().children('img').trigger('click')
+			var star = Math.floor(Math.random() * 12) + 2;
+			document.getElementsByTagName('img') [star].click();
 			setTimeout(makeAction, 1000)
 		} else if (titleIs('Leider verloren')) {
 			$('.lose button.game-button').trigger('click')
